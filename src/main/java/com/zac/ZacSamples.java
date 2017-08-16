@@ -69,7 +69,12 @@ class ZacSamples { 
             i++;
         }
         
-
-        // 次のサンプル
+        // 入力のサンプル
+        System.out.println("=== input ===");
+        System.out.print("名前：");
+        Scanner scan = new Scanner(System.in);
+        String firstName = scan.next();
+        System.out.println("名前は" + firstName + "です");
+        
     }
 }
