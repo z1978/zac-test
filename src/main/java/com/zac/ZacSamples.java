@@ -4,6 +4,15 @@ import java.io.*;
 
 class ZacSamples { 
     public static void main(String[] args) throws java.lang.Exception {
+        
+        System.out.println("=== 配列のサンプル ===");
+        // 変数namesに、配列を代入してください
+        String[] names = {"にんじゃわんこ", "ひつじ仙人", "ベイビーわんこ"};
+        // インデックス番号が0の要素を出力してください
+        System.out.println(names[0]);
+        // インデックス番号が2の要素を出力してください
+        System.out.println(names[2]);        
+        
         // breakを使って強制的に終了させる方法
         System.out.println("=== break ===");
         for (int i = 1; i <= 10; i++) {
@@ -34,5 +43,7 @@ class ZacSamples { 
             i++;
         }
         
+
+        // 次のサンプル
     }
 }
