@@ -75,28 +75,37 @@ class ZacSamples { 
         //Scanner scan = new Scanner(System.in);
         //String firstName = scan.next();
         //System.out.println("名前は" + firstName + "です");
-
-        // StringBuilderとStringBufferの違い
-        // StringBuffer JDK1.0
-        // 可変文字列を扱うためのクラス。スレッドセーフ。
-        // StringBuilder JDK1.5
-        // 可変文字列を扱うためのクラス。同期化は保証されませんが、その分高速に処理できます。
-        // APIリファレンスでは単一スレッドの場合はこちらを使用することが推奨されています。
-          private static void dispHantei(String name, int tokuten){
-    StringBuilder sb = new StringBuilder();
-
-    sb.append(name);
-    sb.append("さんの成績は");
-    sb.append(tokuten);
-    sb.append("点です。結果は");
-    if (tokuten > 75){
-      sb.append("合格");
-    }else{
-      sb.append("不合格");
+        
+        displyTitle("Road of Java");
+        displyHantei("山田", 89);
+        displyHantei("鈴木", 45);
     }
-    sb.append("です。");
 
-    System.out.println(new String(sb));
-  }
+    // StringBuilderとStringBufferの違い
+    // StringBuffer JDK1.0
+    // 可変文字列を扱うためのクラス。スレッドセーフ。
+    private static void displyTitle(String title) {
+        StringBuffer sb = new StringBuffer(title);
+        sb.delete(0, 8);
+        sb.append("の道");
+        System.out.println(sb);
     }
+    // StringBuilder JDK1.5
+    // 可変文字列を扱うためのクラス。同期化は保証されませんが、その分高速に処理できます。
+    // APIリファレンスでは単一スレッドの場合はこちらを使用することが推奨されています。
+    private static void dispHantei(String name, int tokuten){
+        StringBuilder sb = new StringBuilder();
+        sb.append(name);
+        sb.append("さんの成績は");
+        sb.append(tokuten);
+        sb.append("点です。結果は");
+        if (tokuten > 75) {
+            sb.append("合格");
+        } else {
+            sb.append("不合格");
+        }
+        sb.append("です。");
+        System.out.println(new String(sb));
+    }
+    
 }
