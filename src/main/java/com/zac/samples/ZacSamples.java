@@ -1,4 +1,4 @@
-package com.zac;
+package com.zac.samples;
 
 import java.util.*;
 import java.lang.*;
