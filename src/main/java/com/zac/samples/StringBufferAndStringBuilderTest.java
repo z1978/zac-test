@@ -5,8 +5,8 @@ import java.util.concurrent.CountDownLatch;
 /*
  * StringBuffer与StringBuilder的线程安全性验证
  * 此示例程序做了如下事情：
- * 基于初始字符串“AAAABBBB”分别构建StringBuffer和StringBuilder对象
- * 分别启动1000个线程，调用StringBuffer和StringBuilder的reverse方法，进行字符串反转
+ * 基于初始字符串“1234567890”分别构建StringBuffer和StringBuilder对象
+ * 分别启动10个线程，调用StringBuffer和StringBuilder的reverse方法，进行字符串反转
  * 所有线程执行完后打印结果，由于反转偶数次，线程安全的对象输出应与初始值相同，线程不安全的对象则可能产生乱序
  * 发现StringBuffer输出与初始值相同，StringBuilder输出产生乱序。多次执行或调大线程数StringBuffer输出结果不变，由此二者线程安全性得证。
  * 
@@ -16,7 +16,7 @@ public class StringBufferAndStringBuilderTest {
 
 	public static void main(String[] args) {
 		long startTime = System.currentTimeMillis();
-		String strToReverse = "AAAABBBB";
+		String strToReverse = "1234567890";
 
 		StringBuffer stringBuffer = new StringBuffer(strToReverse);
 		StringBuilder stringBuilder = new StringBuilder(strToReverse);
